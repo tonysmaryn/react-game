@@ -1,0 +1,17 @@
+.card {
+    width: 160px;
+    height: 225px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 500ms;
+
+    /* &:hover {
+        transform: rotateY(180deg);
+        transition: transform 500ms;
+        background-image: url("./back.jpg");
+    }*/
+}

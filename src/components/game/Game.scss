@@ -1,0 +1,13 @@
+.cards-container {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
