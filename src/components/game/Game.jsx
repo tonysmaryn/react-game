@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from '../card/Card';
 import './Game.scss';
 import uuid from 'react-uuid';
+import { BackButton } from '../backButton/BackButton';
 
 const generateCards = (num) => {
   const array = Array(52)
@@ -24,8 +25,29 @@ const generateCards = (num) => {
   return array;
 };
 
-export const Game = () => {
-  const [cards, setCards] = useState(generateCards(5));
+export const Game = (props) => {
+  const getDiff = () => {
+    switch (props.settings.diff) {
+      case 'easy': {
+        console.log('1');
+        return 5;
+      }
+      case 'medium': {
+        console.log('2');
+        return 10;
+      }
+      case 'hard': {
+        console.log('3');
+        return 15;
+      }
+      default: {
+        console.log('4');
+        return 5;
+      }
+    }
+  };
+
+  const [cards, setCards] = useState(generateCards(getDiff()));
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
   const [canFlip, setCanFlip] = useState(true);
@@ -100,6 +122,7 @@ export const Game = () => {
           />
         ))}
       </div>
+      <BackButton />
     </div>
   );
 };
